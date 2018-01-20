@@ -60,7 +60,27 @@ class db extends Map {
         return this.get(key);
     }
     randomkey(){
-        
+        function randomNum(minNum,maxNum){
+            switch(arguments.length){
+                case 1:
+                    return parseInt(Math.random()*minNum+1,10);
+                    break;
+                case 2:
+                    return parseInt(Math.random()*(maxNum-minNum+1)+minNum,10);
+                    break;
+                default:
+                    return 0;
+                    break;
+            }
+        }
+        let size=this.size;
+        let key;
+        let keys=this.keys()
+        let random=randomNum(1,size);
+        for (let temp=0;temp<random;temp++){
+            key=keys.next().value;
+        }
+        return this.get(key);
     }
     append(key,string){
         this.set(key,this.get(key)+string);
