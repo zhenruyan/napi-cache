@@ -7,13 +7,15 @@ class db extends Map {
     }){
         super.set(key,val);
         if(Number(ttl)!=0){
-            setTimeout(
+            let timeid=setTimeout(
                 function () {
                     this.del(key);
                     cb()
                 }.bind(this)
                 ,Number(ttl));
+                return timeid;
         }
+        return this.get(key)
     }
     del(key){
         super.delete(key)
@@ -22,7 +24,7 @@ class db extends Map {
         return JSON.stringify(super.get(key))
     }
     get(key){
-        super.get(key)
+        return super.get(key)
     }
     exists(key){
         if(super.get(key)){
@@ -33,11 +35,47 @@ class db extends Map {
     }
     expire(key,ttl,cb=function () {
     }){
-       setTimeout(function(){
+       let timeid=setTimeout(function(){
            this.del(key);
            cb()
        }.bind(this),ttl)
+        return timeid;
     }
+    persist(timeid){
+        clearTimeout(timeid)
+    }
+    // randomkey(){ //todo 看怎么搞
+    //     console.log()
+    // }
+    append(key,string){
+        this.set(key,this.get(key)+string);
+        return this.get(key);
+    }
+    decr(key){
+        if(key==null){
+            return false;
+        }
+        let num=Number(this.get(key))
+        if(isNaN(num)){
+            num=0;
+        }
+        this.set(key,num-1);
+        return this.get(key)
+    }
+    incr(key){
+        if(key==null){
+            return false;
+        }
+        let num=Number(this.get(key))
+        if(isNaN(num)){
+            num=0;
+        }
+        this.set(key,num+1);
+        return this.get(key)
+    }
+    
 
 }
-module.exports=db;
+
+module.exports.cache=db;
+module.exports= new db();
