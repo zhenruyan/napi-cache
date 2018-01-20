@@ -59,9 +59,9 @@ class db extends Map {
         this.timelist.delete(key);
         return this.get(key);
     }
-    // randomkey(){ //todo 看怎么搞
-    //     console.log()
-    // }
+    randomkey(){
+        
+    }
     append(key,string){
         this.set(key,this.get(key)+string);
         return this.get(key);
@@ -112,10 +112,28 @@ class db extends Map {
             return false;
         }
     }
-
-
-
+    ttl(key){
+        let time=this.timelist.get(key)
+        return time._idleTimeout;
+    }
+    mget(){
+        let temp;
+        let data=[];
+        for (temp in arguments){
+            data[temp]=(this.get(arguments[temp]));
+        }
+        return data;
+    }
+    getset(key,val){
+        if(this.get(key)!="undefined"){
+           let old =this.get(key);
+            this.set(key,val);
+            return old;
+        }else{
+            return false;
+        }
+    }
 }
-
+//todo hash  list set  有序set 发布订阅
 module.exports.cache=db;
 module.exports= new db();
