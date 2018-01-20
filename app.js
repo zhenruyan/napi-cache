@@ -2,6 +2,11 @@ class db extends Map {
     constructor(){
         super();
     }
+    timelist = new Map();
+    //todo 待定
+    save(){}
+    bgsave(){}
+    config(){}
     //redis的键类型管理
     set (key,val,ttl=0,cb=function () {
     }){
@@ -13,11 +18,14 @@ class db extends Map {
                     cb()
                 }.bind(this)
                 ,Number(ttl));
+                this.timelist.set(key,timeid)
                 return timeid;
         }
         return this.get(key)
     }
     del(key){
+        clearTimeout(this.timelist.get(key));
+        this.timelist.delete(key)
         super.delete(key)
     }
     dump(key){
@@ -39,6 +47,7 @@ class db extends Map {
            this.del(key);
            cb()
        }.bind(this),ttl)
+        this.timelist.set(key,timeid)
         return timeid;
     }
     persist(timeid){
