@@ -1,8 +1,9 @@
 class db extends Map {
     constructor(){
         super();
+        this.timelist=new Map;
     }
-    timelist = new Map();
+
     //todo 待定
     save(){}
     bgsave(){}
@@ -18,13 +19,12 @@ class db extends Map {
                     cb()
                 }.bind(this)
                 ,Number(ttl));
-                this.timelist.set(key,timeid)
-                return timeid;
+                this.timelist.set(key,timeid);
         }
         return this.get(key)
     }
     del(key){
-        clearTimeout(this.timelist.get(key));
+        this.timelist.get(key).close();
         this.timelist.delete(key)
         super.delete(key)
     }
@@ -43,15 +43,21 @@ class db extends Map {
     }
     expire(key,ttl,cb=function () {
     }){
-       let timeid=setTimeout(function(){
-           this.del(key);
-           cb()
-       }.bind(this),ttl)
-        this.timelist.set(key,timeid)
-        return timeid;
+        if(this.get(key)!="undefined"){
+            let timeid=setTimeout(function(){
+                this.del(key);
+                cb()
+            }.bind(this),ttl)
+            this.timelist.set(key,timeid)
+            return this.get(key);
+        }else {
+            return false;
+        }
     }
-    persist(timeid){
-        clearTimeout(timeid)
+    persist(key){
+        this.timelist.get(key).close();
+        this.timelist.delete(key);
+        return this.get(key);
     }
     // randomkey(){ //todo 看怎么搞
     //     console.log()
@@ -82,7 +88,32 @@ class db extends Map {
         this.set(key,num+1);
         return this.get(key)
     }
-    
+    getrange(key,start,end){
+        start=start-1;
+        end=end;
+        if(typeof (this.get(key)=='String')){
+            return this.get(key).substring(start,end);
+        }else {
+            return false;
+        }
+    }
+    strlen(key){
+        if(this.get(key)!="undefined"){
+            return this.get(key).length;
+        }else{
+            return false;
+        }
+    }
+    setrange(key,offset,value){
+        if(this.get(key)!="undefined"){
+             this.set(key,this.getrange(key,1,offset)+value);
+             return this.strlen(key);
+        }else{
+            return false;
+        }
+    }
+
+
 
 }
 
