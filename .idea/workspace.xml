@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3172359f-46e2-4096-ba1d-fdfee7f5432a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change beforePath="$PROJECT_DIR$/lib/hash.js" afterPath="$PROJECT_DIR$/lib/hash.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,7 +13,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="555">
@@ -33,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hash.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="hash.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/hash.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+            <state relative-caret-position="489">
+              <caret line="86" column="23" lean-forward="true" selection-start-line="86" selection-start-column="23" selection-end-line="86" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -138,13 +138,13 @@
         <option value="$PROJECT_DIR$/lib/String.js" />
         <option value="$PROJECT_DIR$/lib/string.js" />
         <option value="$PROJECT_DIR$/lib/kv.js" />
-        <option value="$PROJECT_DIR$/lib/hash.js" />
         <option value="$PROJECT_DIR$/lib/list.js" />
         <option value="$PROJECT_DIR$/lib/listset.js" />
         <option value="$PROJECT_DIR$/lib/set.js" />
         <option value="$PROJECT_DIR$/lib/queue.js" />
         <option value="$PROJECT_DIR$/lib/system/config.js" />
         <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/lib/hash.js" />
       </list>
     </option>
   </component>
@@ -320,12 +320,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1516442211817</updated>
-      <workItem from="1516442213930" duration="19835000" />
+      <workItem from="1516442213930" duration="24955000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19835000" />
+    <option name="totallyTimeSpent" value="24955000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="252" y="32" width="1366" height="734" extended-state="6" />
@@ -490,14 +490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/hash.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/queue.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -518,6 +510,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
           <caret line="23" column="27" lean-forward="false" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/hash.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="86" column="23" lean-forward="true" selection-start-line="86" selection-start-column="23" selection-end-line="86" selection-end-column="23" />
           <folding />
         </state>
       </provider>
