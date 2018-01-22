@@ -1,8 +1,11 @@
-#  类redis api的内存缓存
+#  Mimic the memory cache of the Redis API
 
-###  已实现部分
-    kv
-    hash(部分)
-    set(部分)
+###  Implemented part
     
-   
+* kv
+* hash (Part)
+* set   (Part)
+    
+##   todo
+ *  buffer memory
+ *  sorted set
