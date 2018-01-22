@@ -1,11 +1,12 @@
 {
   "name": "nedis-cache",
   "version": "1.0.0",
-  "description": "类redisapi的内存缓存",
+  "description": "Mimic the memory cache of the Redis API,类redisapi的内存缓存",
+  ,"keyword":"redis api memory cache map set k/v"
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "wtfpl"
 }
