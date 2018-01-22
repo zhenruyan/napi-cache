@@ -11,10 +11,6 @@ class nedis{
         this.listset=listset;
         this.set=set;
     }
-    //todo 待定
-    // save(){}
-    // bgsave(){}
-    // config(){}
 }
 module.exports.hash=hash.hash;
 module.exports.kv=kv.kv;
