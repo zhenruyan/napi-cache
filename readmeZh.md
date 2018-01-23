@@ -69,9 +69,9 @@ nedis.kv.set("a","a",1000,function(){
 
 ##   文档
 
-    [English](https://github.com/zhenruyan/napi-cache/wiki/nedis-cache---document)
+[English](https://github.com/zhenruyan/napi-cache/wiki/nedis-cache---document)
 
-    [简体中文](https://github.com/zhenruyan/napi-cache/wiki/nedis-cache%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
+[简体中文](https://github.com/zhenruyan/napi-cache/wiki/nedis-cache%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
 
 
 ##   todo
