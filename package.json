@@ -1,6 +1,6 @@
 {
   "name": "nedis-cache",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Mimic the memory cache of the Redis API,类redisapi的内存缓存",
   "descriptions": "Mimic the memory cache of the Redis API,类redisapi的内存缓存",
   "keywords":["nodejs","redis","api","memory","cache","map","set","k/v"],
